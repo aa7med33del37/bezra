@@ -111,6 +111,11 @@ function update(){
       player.y + player.hit.offsetY + player.hit.h > o.y
     ) {
       gameOver = true;
+
+setTimeout(() => {
+  resetGame();
+}, 1000);
+
     }
   });
 
@@ -180,7 +185,20 @@ function jump(){
     player.grounded = false;
   }
 }
+  function resetGame(){
+  gameOver = false;
+  score = 0;
+  speed = 6;
+
+  player.y = 0;
+  player.dy = 0;
+  player.grounded = false;
+
+  obstacles = [];
+}
+
 </script>
 
 </body>
 </html>
+
